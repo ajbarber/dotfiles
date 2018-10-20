@@ -1,0 +1,1 @@
+/home/adam/.emacs.d/plugins/plugins.el
