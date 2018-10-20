@@ -6,7 +6,6 @@ URxvt*background: rgba:0000/0000/0200/c800
 urxvt*foreground: white
 URxvt.boldFont:
 
-
 !! black dark/light
 *color0: #073642
 *color8: #002b36
