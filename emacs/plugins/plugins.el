@@ -1,1 +1,1 @@
-/home/adam/.emacs.d/plugins/plugins.el
+(load-theme 'soft-morning)
