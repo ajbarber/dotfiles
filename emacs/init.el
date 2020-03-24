@@ -8,7 +8,7 @@
   (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
   ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
   (when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
+   ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
 
 ;; Added by Package.el.  This must come before configurations of
@@ -30,16 +30,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-map (ansi-color-make-color-map) t)
- '(ansi-color-names-vector
-   ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
- '(company-quickhelp-color-background "#4F4F4F")
- '(company-quickhelp-color-foreground "#DCDCCC")
- '(compilation-message-face (quote default))
+   [default bold shadow italic underline bold bold-italic bold])
+ '(beacon-color "#c82829")
+ '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("fd1dd4d022ece05400c7bd1efc2ae5cca5cd64a53f3670da49d0c8f0ef41f4e3" "2df493c5c7f329eef362290abdcd42a45abad98ffe33f639ecc55af084224e8b" "26d49386a2036df7ccbe802a06a759031e4455f07bda559dcf221f53e8850e69" "13d20048c12826c7ea636fbe513d6f24c0d43709a761052adbca052708798ce3" "7356632cebc6a11a87bc5fcffaa49bae528026a78637acd03cae57c091afd9b9" "5e3fc08bcadce4c6785fc49be686a4a82a356db569f55d411258984e952f194a" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "7153b82e50b6f7452b4519097f880d968a6eaf6f6ef38cc45a144958e553fbc6" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "3448e3f5d01b39ce75962328a5310438e4a19e76e4b691c21c8e04ca318a5f62" "66881e95c0eda61d34aa7f08ebacf03319d37fe202d68ecf6a1dbfd49d664bc3" default)))
+    ("c1fb68aa00235766461c7e31ecfc759aa2dd905899ae6d95097061faeb72f9ee" "c9f102cf31165896631747fd20a0ca0b9c64ecae019ce5c2786713a5b7d6315e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "f2755fc8f0b4269cc45032715b8e11ea2d768aae47b8bb2a256ca1c8fdeb3628" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "7153b82e50b6f7452b4519097f880d968a6eaf6f6ef38cc45a144958e553fbc6" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "3448e3f5d01b39ce75962328a5310438e4a19e76e4b691c21c8e04ca318a5f62" "66881e95c0eda61d34aa7f08ebacf03319d37fe202d68ecf6a1dbfd49d664bc3" default)))
  '(diary-entry-marker (quote font-lock-variable-name-face))
  '(emms-mode-line-icon-image-cache
    (quote
@@ -62,8 +58,10 @@ static char *note[] = {
 \"#######...\",
 \"######....\",
 \"#######..#\" };")))
- '(fci-rule-color "#f1c40f")
- '(gnus-logo-colors (quote ("#0d7b72" "#adadad")) t)
+ '(fci-rule-color "#f6f0e1")
+ '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
+ '(frame-background-mode (quote light))
+ '(gnus-logo-colors (quote ("#0d7b72" "#adadad")))
  '(gnus-mode-line-image-cache
    (quote
     (image :type xpm :ascent center :data "/* XPM */
@@ -86,176 +84,122 @@ static char *gnus-pointer[] = {
 \"######..###.######\",
 \"###....####.######\",
 \"###..######.######\",
-\"###########.######\" };")) t)
- '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
- '(highlight-tail-colors
-   (quote
-    (("#3C3D37" . 0)
-     ("#679A01" . 20)
-     ("#4BBEAE" . 30)
-     ("#1DB4D0" . 50)
-     ("#9A8F21" . 60)
-     ("#A75B00" . 70)
-     ("#F309DF" . 85)
-     ("#3C3D37" . 100))))
- '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
- '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
- '(hl-sexp-background-color "#efebe9")
- '(ibuffer-deletion-face (quote diredp-deletion-file-name))
- '(ibuffer-marked-face (quote diredp-flag-mark))
- '(ivy-mode t)
- '(magit-diff-use-overlays nil)
- '(nrepl-message-colors
-   (quote
-    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+\"###########.######\" };")))
  '(package-selected-packages
    (quote
-    (lua-mode flatland-theme dakrone-theme zenburn-theme tommyh-theme soft-morning-theme paper-theme iodine-theme hydandata-light-theme soft-charcoal-theme monokai-theme espresso-theme moe-theme flatui-theme hemisu-theme smex wgrep counsel-projectile multiple-cursors expand-region real-auto-save vdiff flycheck-inline flycheck-color-mode-line react-snippets eslint-fix eslintd-fix js-doc flycheck-popup-tip tide projectile ag all-the-icons leuven-theme solarized-theme alect-themes color-theme-solarized github-modern-theme haml-mode magit liso-theme forest-blue-theme neotree company-ycmd ycmd rjsx-mode company-tern tern web-mode)))
- '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
- '(pos-tip-background-color "#FFFACE")
- '(pos-tip-foreground-color "#272822")
- '(projectile-mode t nil (projectile))
- '(sml/active-background-color "#34495e")
- '(sml/active-foreground-color "#ecf0f1")
- '(sml/inactive-background-color "#dfe4ea")
- '(sml/inactive-foreground-color "#34495e")
- '(vc-annotate-background "#ecf0f1")
+    (py-autopep8 flycheck-pyflakes anaconda-mode flymake-diagnostic-at-point eslint-fix eslintd-fix js-doc flycheck-popup-tip tide projectile helm-ag ag all-the-icons leuven-theme solarized-theme alect-themes color-theme-solarized github-modern-theme haml-mode helm-css-scss magit liso-theme forest-blue-theme neotree company-ycmd ycmd helm rjsx-mode company-tern tern web-mode)))
+ '(popup-complete-enabled-modes (quote (reason-mode)))
+ '(tool-bar-mode nil)
+ '(vc-annotate-background "#f6f0e1")
  '(vc-annotate-color-map
    (quote
-    ((30 . "#e74c3c")
-     (60 . "#c0392b")
-     (90 . "#e67e22")
-     (120 . "#d35400")
-     (150 . "#f1c40f")
-     (180 . "#d98c10")
-     (210 . "#2ecc71")
-     (240 . "#27ae60")
-     (270 . "#1abc9c")
-     (300 . "#16a085")
-     (330 . "#2492db")
-     (360 . "#0a74b9"))))
- '(vc-annotate-very-old-color "#0a74b9")
- '(weechat-color-list
-   (quote
-    (unspecified "#272822" "#3C3D37" "#F70057" "#F92672" "#86C30D" "#A6E22E" "#BEB244" "#E6DB74" "#40CAE4" "#66D9EF" "#FB35EA" "#FD5FF0" "#74DBCD" "#A1EFE4" "#F8F8F2" "#F8F8F0"))))
+    ((20 . "#e43838")
+     (40 . "#f71010")
+     (60 . "#ab9c3a")
+     (80 . "#9ca30b")
+     (100 . "#ef8300")
+     (120 . "#958323")
+     (140 . "#1c9e28")
+     (160 . "#3cb368")
+     (180 . "#028902")
+     (200 . "#008b45")
+     (220 . "#077707")
+     (240 . "#259ea2")
+     (260 . "#358d8d")
+     (280 . "#0eaeae")
+     (300 . "#2c53ca")
+     (320 . "#1111ff")
+     (340 . "#2020cc")
+     (360 . "#a020f0"))))
+ '(vc-annotate-very-old-color "#a020f0"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 90 :width normal))))
- '(ediff-even-diff-A ((((class color) (min-colors 89)) (:background "#c6c6c6"))))
- '(ediff-even-diff-B ((((class color) (min-colors 89)) (:background "#c6c6c6"))))
- '(ediff-odd-diff-A ((((class color) (min-colors 89)) (:background "#ffafaf" :bold t))))
- '(ediff-odd-diff-B ((((class color) (min-colors 89)) (:background "#ffafaf" :bold t)))))
+ '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 105 :width normal)))))
 
-;; misc settings i like
-(delete-selection-mode 1)
-(setq ediff-split-window-function 'split-window-horizontally)
-;;(setq helm-ag-insert-at-point 'symbol)
+;; paths
 
-;; store all backup and autosave files in the tmp dir
+(setenv "PATH"
+  (concat
+   "/home/adam/.config/versions/node/v12.10.0/bin/refmt" ";"
+   "/home/adam/.config/versions/node/v12.10.0/bin/prettier" ";"
+   "/home/adam/rls-linux" ";"
+   (getenv "PATH")
+  )
+)
+
+(global-linum-mode 1)
+
+;;save all
+(defun save-all () (interactive) (save-some-buffers t))
+(global-set-key (kbd "C-x s") 'save-all)
+
+;; temp files
+
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+    (setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
 
+(auto-save-visited-mode 1)
+;; completion
+
+;; matching parentheses
+(show-paren-mode 1)
+
+;;completion
+(global-set-key (kbd "TAB") 'completion-at-point)
+
+;;
+(global-syntax-subword-mode 1)
+
+;; ivy
+
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+;; enable this if you want `swiper' to use it
+;; (setq search-default-mode #'char-fold-to-regexp)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+
+(tool-bar-mode -1)
+
+(global-set-key (kbd "C-S-<up>") 'windmove-up)
+(global-set-key (kbd "C-S-<down>") 'windmove-down)
+(global-set-key (kbd "C-S-<left>") 'windmove-left)
+(global-set-key (kbd "C-S-<right>") 'windmove-right)
 
 ;; plugins
-
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (load "plugins.el")
 
-;; expand region
-
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
-
-;; mark multiple
-
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-
-;; global line numbers
-(global-linum-mode t)
-
-
-;; switch to minibuffer
-
-(defun switch-to-minibuffer-window ()
-  "switch to minibuffer window (if active)"
-  (interactive)
-  (when (active-minibuffer-window)
-    (select-frame-set-input-focus (window-frame (active-minibuffer-window)))
-    (select-window (active-minibuffer-window))))
-(global-set-key (kbd "C-`") 'switch-to-minibuffer-window)
-
-;;ivy
-
-(defun ivy-with-thing-at-point (cmd)
-  (let ((ivy-initial-inputs-alist
-         (list
-          (cons cmd (thing-at-point 'symbol)))))
-    (funcall cmd)))
-
-;; Example 1
-(defun counsel-ag-thing-at-point ()
-  (interactive)
-  (ivy-with-thing-at-point 'counsel-ag))
-
-;; Example 2
-(defun swiper-thing-at-point ()
-  (interactive)
-  (ivy-with-thing-at-point 'swiper))
-
-(ivy-mode 1)
-;; add ‘recentf-mode’ and bookmarks to ‘ivy-switch-buffer’.
-(setq ivy-use-virtual-buffers t)
-;; number of result lines to display
-(setq ivy-height 10)
-;; does not count candidates
-(setq ivy-count-format "")
-;; no regexp by default
-(setq ivy-initial-inputs-alist nil)
-;; configure regexp engine.
-(setq ivy-re-builders-alist
-      ;; allow input not in order
-      '((t   . ivy--regex-ignore-order)))
-
-;; keys
-
-;;(global-set-key (kbd "C-x b") 'helm-buffers-list)
-(global-set-key (kbd "<f1>") 'ibuffer)
-(global-set-key (kbd "<f2>") 'counsel-projectile)
-(global-set-key (kbd "<f3>") 'counsel-projectile-switch-project)
-(global-set-key (kbd "<f4>") 'counsel-recentf)
-
-(global-set-key (kbd "C-s") 'swiper)
-(setq ivy-display-style 'fancy)
-
-(global-set-key (kbd "C-x .") 'counsel-ag-thing-at-point)
-(global-set-key (kbd "C-c j") 'counsel-git-grep)
-(global-set-key (kbd "<C-tab>") 'counsel-ag)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "<f6>") 'list-flycheck-errors)
-(global-set-key (kbd "<f5>") 'tide-fix)
-(global-set-key (kbd "<f7>") 'tide-organize-imports)
-(global-set-key (kbd "C-x g") 'magit-status)
-
-;;(setq enable-recursive-minibuffers t)
 ;; flycheck
 (require 'flycheck)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;;flycheck popup
 (with-eval-after-load 'flycheck
-  (flycheck-pos-tip-mode))
-;; (with-eval-after-load 'flycheck
-;;   '(add-hook 'flycheck-mode-hook 'flycheck-popup-tip-mode))
+  '(add-hook 'flycheck-mode-hook 'flycheck-popup-tip-mode))
 
-
-;; disable jshint since we prefer eslint checking 
+;; disable jshint since we prefer eslint checking
 (setq-default flycheck-disabled-checkers
               (append flycheck-disabled-checkers
                       '(javascript-jshint)))
@@ -263,6 +207,8 @@ static char *gnus-pointer[] = {
 
 ;;customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
+
+(flycheck-add-mode 'javascript-eslint 'web-mode)
 
 (defun my/use-eslint-from-node-modules ()
   (let* ((root (locate-dominating-file
@@ -284,21 +230,15 @@ static char *gnus-pointer[] = {
 ;; webmode
 (require 'web-mode)
 
-(setq js-indent-level 2)
-(setq sgml-basic-offset 0)
-(setq js2-basic-offset 2)
-(setq-local javascript-indent-level 2) 
-
-;; Use rjsx-mode for .jsx files
+;; Use web-mode for .jsx files
 (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
 
 ;; Force 'content-type' as 'jsx' for .js and .jsx files
 ;; See here: http://cha1tanya.com/2015/06/20/configuring-web-mode-with-jsx.html
- (setq web-mode-content-types-alist
-       '(("jsx" . "\\.js[x]?\\'")))
+(setq web-mode-content-types-alist
+      '(("jsx" . "\\.js[x]?\\'")))
 
 (setq-default indent-tabs-mode nil)
-(setq web-mode-enable-auto-quoting nil)
 
 ;; css mode
 (add-hook 'css-mode-hook
@@ -306,8 +246,16 @@ static char *gnus-pointer[] = {
             (setq css-indent-offset 2)
             (setq indent-tabs-mode nil)))
 
+;; eslint-fix
+(require 'eslint-fix)
+(eval-after-load 'web-mode
+	   '(add-hook 'web-mode-hook (lambda () (add-hook 'after-save-hook 'eslint-fix nil t))))
+
 ;; haml mode
 (require 'haml-mode)
+
+;; some hacked up code to fix a window
+(require 'dedicate-windows-manually)
 
 ;; Adjust indents for web-mode
 (defun my-web-mode-hook ()
@@ -317,21 +265,15 @@ static char *gnus-pointer[] = {
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-attr-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
-;;  (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
-;;  (add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
 )
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
 ;; autocompletion
 (require 'company)
-;;(require 'company-etags)
-
-;;(add-to-list 'company-backends 'company-etags)
-;;(add-hook 'web-mode-hook (lambda ()
-;;                          (tern-mode)
-;;                          (company-mode)))
 
 (setq company-tooltip-align-annotations t)
 
@@ -345,55 +287,109 @@ static char *gnus-pointer[] = {
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-smart-open t)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-;;(setq neo-autorefresh t)
 
-(add-hook 'web-mode-hook 'eslintd-fix-mode)
+;; projectile
+(require 'projectile)
+(projectile-mode)
 
-(require 'tide)
+;; turn off autosave
+;; (setq make-backup-files nil)
 
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  ;;(setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  ;; company is an optional dependency. You have to
-  ;; install it separately via package-install
-  ;; `M-x package-install [ret] company`
-  (company-mode +1))
 
-;; aligns annotation to the right hand side
-(setq company-tooltip-align-annotations t)
+;; makes a really nice minibuffer menu for merging
+(use-package smerge-mode
+  :after hydra
+  :config
+  (defhydra unpackaged/smerge-hydra
+    (:color pink :hint nil :post (smerge-auto-leave))
+    "
+^Move^       ^Keep^               ^Diff^                 ^Other^
+^^-----------^^-------------------^^---------------------^^-------
+_n_ext       _b_ase               _<_: upper/base        _C_ombine
+_p_rev       _u_pper              _=_: upper/lower       _r_esolve
+^^           _l_ower              _>_: base/lower        _k_ill current
+^^           _a_ll                _R_efine
+^^           _RET_: current       _E_diff
+"
+    ("n" smerge-next)
+    ("p" smerge-prev)
+    ("b" smerge-keep-base)
+    ("u" smerge-keep-upper)
+    ("l" smerge-keep-lower)
+    ("a" smerge-keep-all)
+    ("RET" smerge-keep-current)
+    ("\C-m" smerge-keep-current)
+    ("<" smerge-diff-base-upper)
+    ("=" smerge-diff-upper-lower)
+    (">" smerge-diff-base-lower)
+    ("R" smerge-refine)
+    ("E" smerge-ediff)
+    ("C" smerge-combine-with-next)
+    ("r" smerge-resolve)
+    ("k" smerge-kill-current)
+    ("ZZ" (lambda ()
+            (interactive)
+            (save-buffer)
+            (bury-buffer))
+     "Save and bury buffer" :color blue)
+    ("q" nil "cancel" :color blue))
+  :hook (magit-diff-visit-file . (lambda ()
+                                   (when smerge-mode
+                                     (unpackaged/smerge-hydra/body)))))
 
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
-(add-hook 'web-mode-hook
-          (lambda ()
-            (when (string-equal "js" (file-name-extension buffer-file-name))
-              (setup-tide-mode))))
+;; show cursor position within line
+(column-number-mode 1)
 
-(setq-default flycheck-disabled-checkers
- (append flycheck-disabled-checkers
-        '(tsx-tide)))
+;;----------------------------------------------------------------------------
+;; Reason setup
+;;----------------------------------------------------------------------------
 
-;; configure jsx-tide checker to run after your default jsx checker
-(flycheck-add-mode 'javascript-eslint 'web-mode)
-(flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append)
+;;(rassq-delete-all 'reason-mode-indent-line auto-mode-alist)
 
-;; insert quotes
+(defun shell-cmd (cmd)
+  "Returns the stdout output of a shell command or nil if the command returned
+   an error"
+  (car (ignore-errors (apply 'process-lines (split-string cmd)))))
 
-(defun double-quote ()
-  (interactive)
-  (if (use-region-p)
-      (save-excursion
-        (let ((beginning (region-beginning))
-              (end (+ (region-end) 1)))
-          (goto-char beginning)
-          (insert "'")
-          (goto-char end)
-          (insert "'")))
-    (insert "''")
-    (backward-char)))
+(defun reason-cmd-where (cmd)
+  (let ((where (shell-cmd cmd)))
+    (if (not (string-equal "unknown flag ----where" where))
+      where)))
 
-(global-set-key (kbd "M-\'") 'double-quote)
+(let* ((refmt-bin (shell-cmd "which prettier")))
+  ;; Add merlin.el to the emacs load path and tell emacs where to find ocamlmerlin
+
+(when refmt-bin
+   (setq refmt-command refmt-bin)))
+
+(require 'reason-mode)
+(setq refmt-command 'npm)
+
+(add-hook 'reason-mode-hook (lambda ()
+                              (add-hook 'before-save-hook #'refmt-before-save)
+                              ))
+
+(require 'eglot)
+(add-to-list 'eglot-server-programs '(reason-mode . ("/home/adam/rls-linux/reason-language-server")))
+(add-hook 'reason-mode-hook 'eglot-ensure)
+;; trailing spaces
+;; (add-hook 'before-save-hook
+;;           'delete-trailing-whitespace)
+
+;;eshell
+
+(add-hook 'eshell-mode-hook (lambda () (text-scale-decrease 1)))
 
 (put 'dired-find-alternate-file 'disabled nil)
+
+
+;; python
+
+(custom-set-variables
+ '(flycheck-python-flake8-executable "python3")
+ '(flycheck-python-pycompile-executable "python3")
+ '(flycheck-python-pylint-executable "python3"))
+
+(add-hook 'python-mode-hook
+          (lambda()
+            (auto-complete-mode)))
