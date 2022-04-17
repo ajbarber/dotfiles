@@ -130,20 +130,6 @@ F\"##################\",
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 128 :width normal)))))
 
-;; paths
-
-;; remove paths for now as they seem to interfere with eachother
-
- ;; (setenv "PATH"
- ;;   (concat
- ;;    "/home/adam/usage_tracking/usage_tracking/bin" ":"
- ;;    "/home/adam/malm/node_modules/.bin" ":"
- ;;    "/home/adam/malm-maps/node_modules/.bin" ":"
- ;;    "/home/adam/zoidberg/node_modules/.bin" ":"
- ;;    (getenv "PATH")
- ;;   )
- ;; )
-
 (global-linum-mode 1)
 
 ;; whitespace
@@ -160,21 +146,14 @@ F\"##################\",
     (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
 
-;;(auto-save-visited-mode 1)
-;; completion
-
 ;; matching parentheses
 (show-paren-mode 1)
 
-;;completion
-;;(global-set-key (kbd "TAB") 'completion-at-point)
-;;
 (global-syntax-subword-mode 1)
 
 ;; ivy
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
-;;(setq enable-recursive-minibuffers t)
 
 (defun ivy-with-thing-at-point (cmd)
       (let ((ivy-initial-inputs-alist
@@ -388,15 +367,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
                               (add-hook 'before-save-hook #'refmt-before-save)
                               ))
 
-;; (require 'eglot)
-
-;; (add-hook 'reason-mode-hook 'eglot-ensure)
-;; (add-hook 'reason-mode-hook 'company-mode)
-
-;; trailing spaces
-;; (add-hook 'before-save-hook
-;;           'delete-trailing-whitespace)
-
 ;;eshell
 
 (add-hook 'eshell-mode-hook (lambda () (text-scale-decrease 1)))
@@ -411,20 +381,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (add-hook 'python-mode-hook
             (lambda()
               (company-mode)))
-
-
-;;purescript
-
-;; (require 'psc-ide)
-
-;; (add-to-list 'eglot-server-programs
-;;              '(reason-mode . ("/usr/bin/reason-language-server")))
-
-;; (add-to-list 'eglot-server-programs
-;;              '(purescript-mode  . ("/home/adam/.nvm/versions/node/v14.15.1/bin/purescript-language-server" "--stdio"
-;;                                    "--config {\"purescript.buildCommand\": \"npx spago build --purs-args --json-errors\"}" )))
-
-;; (add-hook 'purescript-mode-hook 'eglot-ensure)
 
 ;; optimisation for lsp
 (setq gc-cons-threshold 100000000)
@@ -445,33 +401,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ; Other mode specific config
   )
 (add-hook 'LaTeX-mode-hook 'my-LaTeX-mode)
-
-
-;; (setq psc-ide-use-npm-bin t)
-
-;; python
-
-;; (add-hook 'purescript-mode-hook 'eglot-ensure)
-;; (add-hook 'purescript-mode-hook
-;;              (lambda()
-;;                (company-mode)))
-
-
-;; trailing blanks
-;; (setq-default show-trailing-whitespace 't)
-;; (setq-default indicate-empty-lines 't)
-
-
-;; rsi hacks
-;; (require 'god-mode)
-;; (god-mode)
-;; (global-set-key (kbd "<escape>") #'god-local-mode)
-
-
-
-;;autosave
-
-;(setq backup-directory-alist `(("." . "~/.saves")))
 
 ;; cloudformation
 
@@ -518,7 +447,6 @@ See `https://github.com/aws-cloudformation/cfn-python-lint'."
   (add-to-list 'flycheck-checkers 'cfn-lint)
   (add-hook 'cfn-json-mode-hook 'flycheck-mode)
   (add-hook 'cfn-yaml-mode-hook 'flycheck-mode))
-
 
 ;;haskell
 
