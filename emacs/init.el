@@ -22,7 +22,8 @@
   (add-to-list
    'package-archives
    ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
-   '("melpa" . "http://melpa.milkbox.net/packages/")
+   '("melpa" . "https://melpa.org/packages/")
+   ;;'("melpa" . "http://melpa.milkbox.net/packages/")
    t))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -31,15 +32,18 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-faces-vector
    [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector
+   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
  '(beacon-color "#c82829")
  '(column-number-mode t)
+ '(company-quickhelp-color-background "#4F4F4F")
+ '(company-quickhelp-color-foreground "#DCDCCC")
  '(custom-safe-themes
-   (quote
-    ("c1fb68aa00235766461c7e31ecfc759aa2dd905899ae6d95097061faeb72f9ee" "c9f102cf31165896631747fd20a0ca0b9c64ecae019ce5c2786713a5b7d6315e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "f2755fc8f0b4269cc45032715b8e11ea2d768aae47b8bb2a256ca1c8fdeb3628" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "7153b82e50b6f7452b4519097f880d968a6eaf6f6ef38cc45a144958e553fbc6" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "3448e3f5d01b39ce75962328a5310438e4a19e76e4b691c21c8e04ca318a5f62" "66881e95c0eda61d34aa7f08ebacf03319d37fe202d68ecf6a1dbfd49d664bc3" default)))
- '(diary-entry-marker (quote font-lock-variable-name-face))
+   '("dd98976d2e8c2f92e52951b2c6472c840a2117db3dad3a9cfa7332596238ab9f" "fd1dd4d022ece05400c7bd1efc2ae5cca5cd64a53f3670da49d0c8f0ef41f4e3" "c1fb68aa00235766461c7e31ecfc759aa2dd905899ae6d95097061faeb72f9ee" "c9f102cf31165896631747fd20a0ca0b9c64ecae019ce5c2786713a5b7d6315e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "f2755fc8f0b4269cc45032715b8e11ea2d768aae47b8bb2a256ca1c8fdeb3628" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" "7153b82e50b6f7452b4519097f880d968a6eaf6f6ef38cc45a144958e553fbc6" "2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "3448e3f5d01b39ce75962328a5310438e4a19e76e4b691c21c8e04ca318a5f62" "66881e95c0eda61d34aa7f08ebacf03319d37fe202d68ecf6a1dbfd49d664bc3" default))
+ '(diary-entry-marker 'font-lock-variable-name-face)
+ '(eglot-confirm-server-initiated-edits nil)
  '(emms-mode-line-icon-image-cache
-   (quote
-    (image :type xpm :ascent center :data "/* XPM */
+   '(image :type xpm :ascent center :data "/* XPM */
 static char *note[] = {
 /* width height num_colors chars_per_pixel */
 \"    10   11        2            1\",
@@ -57,14 +61,15 @@ static char *note[] = {
 \"#..######.\",
 \"#######...\",
 \"######....\",
-\"#######..#\" };")))
+\"#######..#\" };"))
  '(fci-rule-color "#f6f0e1")
- '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
- '(frame-background-mode (quote light))
- '(gnus-logo-colors (quote ("#0d7b72" "#adadad")))
+ '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
+ '(flycheck-python-flake8-executable "python3")
+ '(flycheck-python-pycompile-executable "python3")
+ '(frame-background-mode 'light)
+ '(gnus-logo-colors '("#0d7b72" "#adadad") t)
  '(gnus-mode-line-image-cache
-   (quote
-    (image :type xpm :ascent center :data "/* XPM */
+   '(image :type xpm :ascent center :data "/* XPM */
 static char *gnus-pointer[] = {
 /* width height num_colors chars_per_pixel */
 \"    18    13        2            1\",
@@ -72,7 +77,7 @@ static char *gnus-pointer[] = {
 \". c #358d8d\",
 \"# c None s None\",
 /* pixels */
-\"##################\",
+F\"##################\",
 \"######..##..######\",
 \"#####........#####\",
 \"#.##.##..##...####\",
@@ -84,16 +89,22 @@ static char *gnus-pointer[] = {
 \"######..###.######\",
 \"###....####.######\",
 \"###..######.######\",
-\"###########.######\" };")))
+\"###########.######\" };") t)
+ '(haskell-compile-command "ghc -dynamic  -Wall -ferror-spans -fforce-recomp -c %s")
+ '(ivy-mode t)
+ '(nrepl-message-colors
+   '("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3"))
  '(package-selected-packages
-   (quote
-    (py-autopep8 flycheck-pyflakes anaconda-mode flymake-diagnostic-at-point eslint-fix eslintd-fix js-doc flycheck-popup-tip tide projectile helm-ag ag all-the-icons leuven-theme solarized-theme alect-themes color-theme-solarized github-modern-theme haml-mode helm-css-scss magit liso-theme forest-blue-theme neotree company-ycmd ycmd helm rjsx-mode company-tern tern web-mode)))
- '(popup-complete-enabled-modes (quote (reason-mode)))
+   '(haskell-mode lsp-haskell lsp-ivy lsp-mode cfn-mode vs-light-theme tommyh-theme fix-word auctex string-inflection pos-tip elpy psc-ide kaolin-themes zenburn-theme spacegray-theme purescript-mode yaml-mode evil wgrep god-mode flycheck-pycheckers blacken auto-complete popup-complete py-autopep8 flycheck-pyflakes flymake-diagnostic-at-point eslint-fix eslintd-fix js-doc tide projectile helm-ag ag all-the-icons leuven-theme solarized-theme alect-themes color-theme-solarized github-modern-theme haml-mode helm-css-scss magit liso-theme forest-blue-theme neotree company-ycmd ycmd helm rjsx-mode company-tern tern web-mode))
+ '(pdf-view-midnight-colors '("#DCDCCC" . "#383838"))
+ '(popup-complete-enabled-modes '(reason-mode))
+ '(purescript-mode-hook '(turn-on-eldoc-mode turn-on-purescript-indentation))
+ '(recentf-mode t)
+ '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(vc-annotate-background "#f6f0e1")
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#e43838")
+   '((20 . "#e43838")
      (40 . "#f71010")
      (60 . "#ab9c3a")
      (80 . "#9ca30b")
@@ -110,27 +121,33 @@ static char *gnus-pointer[] = {
      (300 . "#2c53ca")
      (320 . "#1111ff")
      (340 . "#2020cc")
-     (360 . "#a020f0"))))
+     (360 . "#a020f0")))
  '(vc-annotate-very-old-color "#a020f0"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 105 :width normal)))))
+ '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 128 :width normal)))))
 
 ;; paths
 
-(setenv "PATH"
-  (concat
-   "/home/adam/.config/versions/node/v12.10.0/bin/refmt" ";"
-   "/home/adam/.config/versions/node/v12.10.0/bin/prettier" ";"
-   "/home/adam/rls-linux" ";"
-   (getenv "PATH")
-  )
-)
+;; remove paths for now as they seem to interfere with eachother
+
+ ;; (setenv "PATH"
+ ;;   (concat
+ ;;    "/home/adam/usage_tracking/usage_tracking/bin" ":"
+ ;;    "/home/adam/malm/node_modules/.bin" ":"
+ ;;    "/home/adam/malm-maps/node_modules/.bin" ":"
+ ;;    "/home/adam/zoidberg/node_modules/.bin" ":"
+ ;;    (getenv "PATH")
+ ;;   )
+ ;; )
 
 (global-linum-mode 1)
+
+;; whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;save all
 (defun save-all () (interactive) (save-some-buffers t))
@@ -143,49 +160,68 @@ static char *gnus-pointer[] = {
     (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
 
-(auto-save-visited-mode 1)
+;;(auto-save-visited-mode 1)
 ;; completion
 
 ;; matching parentheses
 (show-paren-mode 1)
 
 ;;completion
-(global-set-key (kbd "TAB") 'completion-at-point)
-
+;;(global-set-key (kbd "TAB") 'completion-at-point)
 ;;
 (global-syntax-subword-mode 1)
 
 ;; ivy
-
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
+;;(setq enable-recursive-minibuffers t)
+
+(defun ivy-with-thing-at-point (cmd)
+      (let ((ivy-initial-inputs-alist
+             (list
+              (cons cmd (thing-at-point 'symbol)))))
+        (funcall cmd)))
+
+(defun counsel-ag-thing-at-point ()
+      (interactive)
+      (ivy-with-thing-at-point 'counsel-ag))
+
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
-(global-set-key "\C-s" 'swiper)
-(global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "C-x o") 'other-window)
+(global-set-key (kbd "C-z") 'counsel-ag-thing-at-point)
+(global-set-key (kbd "C-c b") 'counsel-projectile-switch-to-buffer)
+(global-set-key (kbd "<f2>") 'counsel-projectile-find-file)
+(global-set-key (kbd "<f3>") 'magit-status)
+(global-set-key (kbd "<f4>") 'counsel-switch-buffer-other-window)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'flymake-show-diagnostics-buffer)
 (global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-(global-set-key (kbd "<f1> l") 'counsel-find-library)
-(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "<f1>") 'counsel-projectile-switch-project)
+(global-set-key (kbd "<f5> f") 'counsel-describef-function)
+(global-set-key (kbd "<f5> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f5> l") 'counsel-find-library)
+(global-set-key (kbd "<f5> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f5> u") 'counsel-unicode-char)
 (global-set-key (kbd "C-c g") 'counsel-git)
 (global-set-key (kbd "C-c j") 'counsel-git-grep)
 (global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "<escape> k") 'counsel-ag)
 (global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-x f") 'counsel-find-file)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(global-set-key (kbd "M-u") 'fix-word-capitalize)
+(global-set-key (kbd "C-u") 'fix-word-upcase)
+(define-key key-translation-map (kbd "<C-escape>") (kbd "C-g"))
 (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
 (tool-bar-mode -1)
 
-(global-set-key (kbd "C-S-<up>") 'windmove-up)
-(global-set-key (kbd "C-S-<down>") 'windmove-down)
-(global-set-key (kbd "C-S-<left>") 'windmove-left)
-(global-set-key (kbd "C-S-<right>") 'windmove-right)
+(global-set-key (kbd "<escape> <up>") 'windmove-up)
+(global-set-key (kbd "<escape> <down>") 'windmove-down)
+(global-set-key (kbd "<escape> <left>") 'windmove-left)
+(global-set-key (kbd "<escape> <right>") 'windmove-right)
 
 ;; plugins
 (add-to-list 'load-path "~/.emacs.d/plugins")
@@ -203,7 +239,6 @@ static char *gnus-pointer[] = {
 (setq-default flycheck-disabled-checkers
               (append flycheck-disabled-checkers
                       '(javascript-jshint)))
-(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 
 ;;customize flycheck temp file prefix
 (setq-default flycheck-temp-prefix ".flycheck")
@@ -251,11 +286,6 @@ static char *gnus-pointer[] = {
 (eval-after-load 'web-mode
 	   '(add-hook 'web-mode-hook (lambda () (add-hook 'after-save-hook 'eslint-fix nil t))))
 
-;; haml mode
-(require 'haml-mode)
-
-;; some hacked up code to fix a window
-(require 'dedicate-windows-manually)
 
 ;; Adjust indents for web-mode
 (defun my-web-mode-hook ()
@@ -280,13 +310,6 @@ static char *gnus-pointer[] = {
 (add-to-list 'company-backends 'company-css)
 (add-hook 'scss-mode-hook (lambda()
                             (company-mode)))
-
-;; neotree
-(add-to-list 'load-path "/home/adam/zoidberg")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-smart-open t)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 ;; projectile
 (require 'projectile)
@@ -351,27 +374,25 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
    an error"
   (car (ignore-errors (apply 'process-lines (split-string cmd)))))
 
-(defun reason-cmd-where (cmd)
-  (let ((where (shell-cmd cmd)))
-    (if (not (string-equal "unknown flag ----where" where))
-      where)))
-
 (let* ((refmt-bin (shell-cmd "which prettier")))
   ;; Add merlin.el to the emacs load path and tell emacs where to find ocamlmerlin
+
+(setq refmt-bin 'npm)
 
 (when refmt-bin
    (setq refmt-command refmt-bin)))
 
 (require 'reason-mode)
-(setq refmt-command 'npm)
 
 (add-hook 'reason-mode-hook (lambda ()
                               (add-hook 'before-save-hook #'refmt-before-save)
                               ))
 
-(require 'eglot)
-(add-to-list 'eglot-server-programs '(reason-mode . ("/home/adam/rls-linux/reason-language-server")))
-(add-hook 'reason-mode-hook 'eglot-ensure)
+;; (require 'eglot)
+
+;; (add-hook 'reason-mode-hook 'eglot-ensure)
+;; (add-hook 'reason-mode-hook 'company-mode)
+
 ;; trailing spaces
 ;; (add-hook 'before-save-hook
 ;;           'delete-trailing-whitespace)
@@ -385,11 +406,124 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 
 ;; python
 
-(custom-set-variables
- '(flycheck-python-flake8-executable "python3")
- '(flycheck-python-pycompile-executable "python3")
- '(flycheck-python-pylint-executable "python3"))
-
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+;; (add-hook 'python-mode-hook 'eglot-ensure)
 (add-hook 'python-mode-hook
-          (lambda()
-            (auto-complete-mode)))
+            (lambda()
+              (company-mode)))
+
+
+;;purescript
+
+;; (require 'psc-ide)
+
+;; (add-to-list 'eglot-server-programs
+;;              '(reason-mode . ("/usr/bin/reason-language-server")))
+
+;; (add-to-list 'eglot-server-programs
+;;              '(purescript-mode  . ("/home/adam/.nvm/versions/node/v14.15.1/bin/purescript-language-server" "--stdio"
+;;                                    "--config {\"purescript.buildCommand\": \"npx spago build --purs-args --json-errors\"}" )))
+
+;; (add-hook 'purescript-mode-hook 'eglot-ensure)
+
+;; optimisation for lsp
+(setq gc-cons-threshold 100000000)
+
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
+
+(add-hook 'purescript-mode-hook
+          (lambda ()
+            (flycheck-mode)
+            (lsp)
+            (turn-on-purescript-indentation)))
+
+;; LaTeX
+
+(defun my-LaTeX-mode()
+  (add-to-list 'TeX-view-program-list '("firefox" "firefox %o"))
+  (setq TeX-view-program-selection '((output-pdf "firefox")))
+  ; Other mode specific config
+  )
+(add-hook 'LaTeX-mode-hook 'my-LaTeX-mode)
+
+
+;; (setq psc-ide-use-npm-bin t)
+
+;; python
+
+;; (add-hook 'purescript-mode-hook 'eglot-ensure)
+;; (add-hook 'purescript-mode-hook
+;;              (lambda()
+;;                (company-mode)))
+
+
+;; trailing blanks
+;; (setq-default show-trailing-whitespace 't)
+;; (setq-default indicate-empty-lines 't)
+
+
+;; rsi hacks
+;; (require 'god-mode)
+;; (god-mode)
+;; (global-set-key (kbd "<escape>") #'god-local-mode)
+
+
+
+;;autosave
+
+;(setq backup-directory-alist `(("." . "~/.saves")))
+
+;; cloudformation
+
+;; Set up a mode for JSON based templates
+
+(define-derived-mode cfn-json-mode js-mode
+    "CFN-JSON"
+    "Simple mode to edit CloudFormation template in JSON format."
+    (setq js-indent-level 2))
+
+(add-to-list 'magic-mode-alist
+             '("\\({\n *\\)? *[\"']AWSTemplateFormatVersion" . cfn-json-mode))
+
+;; Set up a mode for YAML based templates if yaml-mode is installed
+;; Get yaml-mode here https://github.com/yoshiki/yaml-mode
+(when (featurep 'yaml-mode)
+
+  (define-derived-mode cfn-yaml-mode yaml-mode
+    "CFN-YAML"
+    "Simple mode to edit CloudFormation template in YAML format.")
+
+  (add-to-list 'magic-mode-alist
+               '("\\(---\n\\)?AWSTemplateFormatVersion:" . cfn-yaml-mode)))
+
+;; Set up cfn-lint integration if flycheck is installed
+;; Get flycheck here https://www.flycheck.org/
+(when (featurep 'flycheck)
+  (flycheck-define-checker cfn-lint
+    "AWS CloudFormation linter using cfn-lint.
+
+Install cfn-lint first: pip install cfn-lint
+
+See `https://github.com/aws-cloudformation/cfn-python-lint'."
+
+    :command ("cfn-lint" "-f" "parseable" source)
+    :error-patterns ((warning line-start (file-name) ":" line ":" column
+                              ":" (one-or-more digit) ":" (one-or-more digit) ":"
+                              (id "W" (one-or-more digit)) ":" (message) line-end)
+                     (error line-start (file-name) ":" line ":" column
+                            ":" (one-or-more digit) ":" (one-or-more digit) ":"
+                            (id "E" (one-or-more digit)) ":" (message) line-end))
+    :modes (cfn-json-mode cfn-yaml-mode))
+
+  (add-to-list 'flycheck-checkers 'cfn-lint)
+  (add-hook 'cfn-json-mode-hook 'flycheck-mode)
+  (add-hook 'cfn-yaml-mode-hook 'flycheck-mode))
+
+
+;;haskell
+
+(require 'lsp)
+(require 'lsp-haskell)
+;; Hooks so haskell and literate haskell major modes trigger LSP setup
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
